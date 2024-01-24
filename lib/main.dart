@@ -2,19 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:to_do_list/pages/home_page.dart';
 
 void main() {
-  runApp(const ToDoList());
+  runApp(const MyApp());
 }
 
-class ToDoList extends StatelessWidget {
-  const ToDoList({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowMaterialGrid: false,
-      debugShowCheckedModeBanner: true,
+      debugShowCheckedModeBanner: false,
       home: const HomePage(),
-      theme: ThemeData(primarySwatch: Colors.yellow),
+      theme: ThemeData(
+          primarySwatch: Colors.yellow,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: Colors.yellow,
+          )),
     );
   }
 }

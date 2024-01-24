@@ -24,10 +24,22 @@ class ToDoList extends StatelessWidget {
         child: Row(
           children: [
             //checkbox
-            Checkbox(value: taskCompleted, onChanged: onChanged),
+            Checkbox(
+              value: taskCompleted,
+              onChanged: onChanged,
+              activeColor: Colors.black,
+            ),
 
             //Task list
-            Text(taskName),
+            Text(
+              taskName,
+              style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  decoration: taskCompleted
+                      ? TextDecoration.lineThrough
+                      : TextDecoration.none),
+            ),
           ],
         ),
       ),

@@ -27,7 +27,6 @@ class _HomePageState extends State<HomePage> {
     } else {
       // there already exists data
       db.loadData();
-      //db.createInitialData();
     }
     super.initState();
   }

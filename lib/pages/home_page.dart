@@ -14,7 +14,8 @@ class _HomePageState extends State<HomePage> {
   final _controller = TextEditingController();
   //list of todo task
   List toDoList = [
-    ["Practice1", false],
+    ["Task_1", false],
+    ["Task_2", false],
   ];
 
   //checkbox is tapped
@@ -45,6 +46,13 @@ class _HomePageState extends State<HomePage> {
         });
   }
 
+  //delete task
+  void deleteTask(int index) {
+    setState(() {
+      toDoList.removeAt(index);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -63,6 +71,7 @@ class _HomePageState extends State<HomePage> {
             taskName: toDoList[index][0],
             taskCompleted: toDoList[index][1],
             onChanged: (value) => checkBoxChanged(value, index),
+            deleteFunction: (context) => deleteTask(index),
           );
         },
       ),
